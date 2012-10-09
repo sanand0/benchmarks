@@ -1,0 +1,4 @@
+$ python mean-median.py
+mean: 62 s, median: 6539 s
+
+Mean is much faster to calculate than median.
