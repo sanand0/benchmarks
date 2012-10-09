@@ -9,4 +9,4 @@ t1 = time.time()
 median = numpy.median(data)
 t2 = time.time()
 
-print 'mean: %d s, median: %d s' % (int((t1 - t0) * 1000), int((t2 - t1) * 1000))
+print 'mean: %d ms, median: %d ms' % (int((t1 - t0) * 1000), int((t2 - t1) * 1000))
