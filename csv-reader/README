@@ -1,0 +1,3 @@
+$ python make-csv.py > data.csv
+$ python csv-reader.py
+csv.reader: 1565 ms, csv.DictReader: 6007 ms, pandas: 3981 ms, tabular: 6457 ms
