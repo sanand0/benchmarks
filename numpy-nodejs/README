@@ -1,0 +1,7 @@
+$ node sum.js
+156 'ms'
+
+$ python sum.py
+46 ms
+
+numpy is faster than node.
