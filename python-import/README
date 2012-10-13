@@ -1,0 +1,19 @@
+$ ./python-import.sh | sort
+0.0008 csv
+0.0009 dateutil
+0.0010 tornado
+0.0015 hashlib
+0.0026 gzip
+0.0033 lxml
+0.0045 json
+0.0119 tarfile
+0.0139 rsa
+0.0174 Image
+0.0333 markdown
+0.0577 httplib2
+0.0815 yaml
+0.0969 numpy
+0.1221 pygame
+0.1454 pandas
+0.1563 matplotlib
+0.2155 scipy
