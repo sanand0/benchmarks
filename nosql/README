@@ -1,0 +1,10 @@
+redis-mysql.py
+--------------
+Redis: 10000 inserts  0.912s
+Mysql: 10000 inserts  9.768s
+Redis: 10000 selects  1.204s
+MySQL: 10000 selects 34.068s
+Redis: 10000 deletes  0.812s
+MySQL: 10000 deletes  8.265s
+
+Note: comparisons are not meaningful unless you understand the code.
