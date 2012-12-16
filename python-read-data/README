@@ -1,0 +1,6 @@
+$ python make-data.py
+$ python read-data.py
+csv: 1618 ms, json: 5053 ms, json-array: 2851 ms, pickle: 4296 ms
+
+CSV is the fastest for data storage.
+(It is also the most compact.)
