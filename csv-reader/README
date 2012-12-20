@@ -1,7 +1,7 @@
 $ python make-csv.py > data.csv
 $ python csv-reader.py
-csv.reader: 1565 ms, csv.DictReader: 6007 ms, pandas: 3981 ms, tabular: 6457 ms
-# Next to the raw CSV reader, Pandas is the fastest
+csv.reader: 1539 ms, csv.DictReader: 6144 ms, pandas: 1206 ms, tabular: 6478 ms
+# Pandas is the fastest
 
 $ gzip -9 data.csv -c > data.csv.gz
 $ bzip2 -9 data.csv -c > data.csv.bz2
