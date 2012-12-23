@@ -93,5 +93,10 @@ json.dump([data[0].keys()] + [row.values() for row in data],
     open('data-array.json', 'w'),
     separators= (',', ':'))
 
+# pickle
 import cPickle as pickle
 pickle.dump(data, open('data.pickle', 'wb'), pickle.HIGHEST_PROTOCOL)
+
+# pandas pickle
+import pandas as pd
+pd.DataFrame(data, columns=data[0].keys()).save('data.pandas')

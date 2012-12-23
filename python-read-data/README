@@ -1,6 +1,18 @@
 $ python make-data.py
+$ gzip -9 data.csv -c > data.csv.gz
+$ bzip2 -9 data.csv -c > data.csv.bz2
 $ python read-data.py
-csv: 1618 ms, json: 5053 ms, json-array: 2851 ms, pickle: 4296 ms
 
-CSV is the fastest for data storage.
-(It is also the most compact.)
+pickle:              6493 ms
+csv.DictReader:      5996 ms
+tabular.tabarray:    5840 ms
+json:                5185 ms
+json-array:          2315 ms
+pandas.read_csv:bz2: 1912 ms
+csv.reader:          1697 ms
+pandas.read_csv:gz:  1088 ms
+pandas.read_csv:      905 ms
+pandas.load:          865 ms
+
+CSV is the fastest for data storage, and Pandas is the best way of processing it.
+(Pandas' native load is a bit faster, but only a bit.)
