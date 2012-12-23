@@ -1,0 +1,7 @@
+$ python date-parse.py
+to_datetime: 5818 ms
+dateutil:    5046 ms
+strptime:    1664 ms
+manual:       250 ms
+
+Manual string-array-based parsing of dates is significantly faster.
