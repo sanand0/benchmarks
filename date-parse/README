@@ -1,7 +1,12 @@
+Date parsing in Python is quite slow, especially for large arrays.
+Here's a benchmark of various approaches.
+
 $ python date-parse.py
-to_datetime: 5818 ms
-dateutil:    5046 ms
-strptime:    1664 ms
-manual:       250 ms
+to_datetime: 5799 ms
+dateutil:    5162 ms
+strptime:    1651 ms
+manual:       242 ms
+lookup:        32 ms
 
 Manual string-array-based parsing of dates is significantly faster.
+Since there aren't many dates, lookups are *MUCH* faster.
