@@ -3,7 +3,10 @@ import csv
 import json
 import cPickle as pickle
 import pandas as pd
-import tabular
+try:
+    import tabular
+except ImportError:
+    tabular = None
 
 def timing(label, fn):
     t0 = time.time()
@@ -15,7 +18,8 @@ timing('csv.reader',            lambda: list(csv.reader(open('data.csv'))))
 timing('csv.DictReader',        lambda: list(csv.DictReader(open('data.csv'))))
 timing('json',                  lambda: json.load(open('data.json')))
 timing('json-array',            lambda: json.load(open('data-array.json')))
-timing('tabular.tabarray',      lambda: tabular.tabarray(SVfile='data.csv', headerlines=1, verbosity=0))
+if tabular is not None:
+    timing('tabular.tabarray',      lambda: tabular.tabarray(SVfile='data.csv', headerlines=1, verbosity=0))
 timing('pickle',                lambda: pickle.load(open('data.pickle', 'rb')))
 timing('pandas.load',           lambda: pd.load('data.pandas'))
 timing('pandas.read_csv',       lambda: pd.read_csv('data.csv'))
