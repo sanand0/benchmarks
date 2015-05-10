@@ -19,6 +19,11 @@ def lookup(s):
     dates = {date:pd.to_datetime(date) for date in s.unique()}
     return s.apply(lambda v: dates[v])
 
+def lookup2(s):
+	'''uses .map() to apply changes'''
+	dates = {date:pd.to_datetime(date) for date in s.unique()}
+	return s.map(dates)
+	
 s = pd.Series(['01-31-2012']*100000)
 
 timing('to_datetime', lambda: pd.to_datetime(s))
@@ -26,3 +31,4 @@ timing('dateutil', lambda: s.apply(dateutil.parser.parse))
 timing('strptime', lambda: s.apply(lambda v: datetime.datetime.strptime(v, '%m-%d-%Y')))
 timing('manual', lambda: s.apply(lambda v: datetime.datetime(int(v[6:10]), int(v[0:2]), int(v[3:5]))))
 timing('lookup', lambda: lookup(s))
+timing('lookup', lambda: lookup2(s))
